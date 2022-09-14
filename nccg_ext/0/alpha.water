@@ -50,7 +50,7 @@ boundaryField
     {
         type              groovyBC;
         variables         "r=1.25/2;x1=(-0.65+r);x2=(-0.65-r);z=(0);y=(2.52531);pOne=1.e-3*vector(x1,y,z);pTwo=1.e-3*vector(x2,y,z);pMid=0.5*(pOne+pTwo);ww=1.0-mag(pos()-pMid)/mag(pOne-pTwo)/0.5;";
-        valueExpression   "1.0*pow(ww > 0.0 ? ww : 0, 1./4.)";
+        valueExpression   "ww > 0.0 ? 1.0 : 0.0";
         value             uniform 1;
     }
     outlet
